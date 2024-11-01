@@ -8,7 +8,7 @@ const LoadingCircle = () => (
     alignItems="center"
     sx={{ height: "66px" }}
   >
-    <p>loading</p>
+    <p>loading2</p>
     <CircularProgress />
   </Box>
 );
