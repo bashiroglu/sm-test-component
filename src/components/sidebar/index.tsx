@@ -1,9 +1,9 @@
-import { Box, Drawer, styled, useTheme } from '@mui/material';
-import Scrollbar from '../../../shared/components/scrollbar';
+import { Box, Drawer, styled, useTheme } from "@mui/material";
 
-import { Link } from 'react-router-dom';
-import SidebarMenu from './sidebar-menu';
-import SidebarTopSection from './sidebar-top-section';
+import { Link } from "react-router-dom";
+import Scrollbar from "../scrollbar";
+import SidebarMenu from "./sidebar-menu";
+import SidebarTopSection from "./sidebar-top-section";
 
 const LogoWrapper = styled(Link)(
   () => `
@@ -34,7 +34,7 @@ const TopSection = styled(Box)(
 `,
 );
 
-function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
+function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }: any) {
   const closeSidebar = () => toggleSidebar();
 
   const theme = useTheme();
@@ -44,10 +44,10 @@ function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
       <SidebarWrapper
         sx={{
           display: {
-            xs: 'none',
-            lg: 'inline-block',
+            xs: "none",
+            lg: "inline-block",
           },
-          position: 'fixed',
+          position: "fixed",
           left: 0,
           top: 0,
         }}
@@ -63,7 +63,7 @@ function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
         sx={{
           boxShadow: `${theme.sidebar.boxShadow}`,
         }}
-        anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+        anchor={theme.direction === "rtl" ? "right" : "left"}
         open={sidebarToggle}
         onClose={closeSidebar}
         variant="temporary"
@@ -80,15 +80,16 @@ function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
                   mb: 3,
                 }}
               >
-                <Box sx={{ width: '100px', height: '50px' }}>
+                <Box sx={{ width: "100px", height: "50px" }}>
                   <LogoWrapper to="/">
                     <img
+                      //@ts-ignore
                       src={import.meta.env.VITE_LOGO_WHITE_URL}
                       alt="logo"
                       style={{
-                        objectFit: 'contain',
-                        width: '100%',
-                        height: '100%',
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "100%",
                       }}
                     />
                   </LogoWrapper>
@@ -96,7 +97,10 @@ function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
               </Box>
               <SidebarTopSection user={user} />
             </TopSection>
-            <SidebarMenu closeSidebar={closeSidebar} menuItems={menuItems} />
+            <SidebarMenu
+              closeSidebar={closeSidebar}
+              menuItems={menuItems}
+            />
           </Scrollbar>
         </SidebarWrapper>
       </Drawer>
