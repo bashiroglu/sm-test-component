@@ -1,4 +1,5 @@
-import SMScrollbar from "./components/scrollbar";
-import SMSidebar from "./components/sidebar";
+import LoadingCircle from "./components/loading-circle";
+import SMSidebar from "./components/sidebar/index";
+import useNotification from "./hooks/useNotification";
 
-export { SMScrollbar, SMSidebar };
+export { LoadingCircle, SMSidebar, useNotification };

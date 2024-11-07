@@ -1,6 +1,7 @@
 import { Box, Drawer, styled, useTheme } from "@mui/material";
 
 import { Link } from "react-router-dom";
+import { ITheme } from "../../theme/ThemeProvider";
 import Scrollbar from "../scrollbar";
 import SidebarMenu from "./sidebar-menu";
 import SidebarTopSection from "./sidebar-top-section";
@@ -12,7 +13,7 @@ const LogoWrapper = styled(Link)(
 );
 
 const SidebarWrapper = styled(Box)(
-  ({ theme }) => `
+  ({ theme }: { theme: ITheme }) => `
         width: ${theme.sidebar.width};
         min-width: ${theme.sidebar.width};
         color: ${theme.sidebar.textColor};
@@ -34,7 +35,7 @@ const TopSection = styled(Box)(
 `,
 );
 
-function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }: any) {
+function SMSidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
   const closeSidebar = () => toggleSidebar();
 
   const theme = useTheme();
@@ -108,4 +109,4 @@ function Sidebar({ sidebarToggle, toggleSidebar, user, menuItems }: any) {
   );
 }
 
-export default Sidebar;
+export default SMSidebar;

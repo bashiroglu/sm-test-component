@@ -1,7 +1,7 @@
-import { Box, List, ListSubheader, styled } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { matchPath, useLocation } from "react-router-dom";
-import SidebarMenuItem, { MenuItem } from "./item";
+import { Box, List, ListSubheader, styled } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import { matchPath, useLocation } from 'react-router-dom';
+import SidebarMenuItem, { MenuItem } from './item';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -61,7 +61,7 @@ const SubMenuWrapper = styled(Box)(
     
           .MuiButton-startIcon,
           .MuiButton-endIcon {
-            transition: ${theme.transitions.create(["color"])};
+            transition: ${theme.transitions.create(['color'])};
 
             .MuiSvgIcon-root {
               font-size: inherit;
@@ -151,7 +151,7 @@ const renderSidebarMenuItems = ({
     <SubMenuWrapper>
       <List component="div">
         {items.reduce((ev, item) => {
-          if (item.name === "accounting.title") {
+          if (item.name === 'accounting.title') {
             return null;
           } else {
             return reduceChildRoutes({ ev, item, path, closeSidebar });

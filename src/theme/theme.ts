@@ -130,7 +130,7 @@ const colors = {
   },
 };
 
-export const themeScheme = createTheme({
+export const themeScheme: any = createTheme({
   // direction: i18n.dir(),
   colors: {
     gradients: {

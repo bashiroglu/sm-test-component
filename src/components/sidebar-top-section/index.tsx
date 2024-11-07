@@ -1,8 +1,16 @@
-import { Avatar, Box, Button, Typography, alpha, styled } from '@mui/material';
-import { useRef } from 'react';
+import {
+  Avatar,
+  Box,
+  Button,
+  Typography,
+  alpha,
+  styled,
+} from "@mui/material";
+import { useRef } from "react";
+import { ITheme } from "../../theme/ThemeProvider";
 
 const UserBoxButton = styled(Button)(
-  ({ theme }) => `
+  ({ theme }: { theme: ITheme }) => `
     padding: ${theme.spacing(1)};
     background-color: ${alpha(theme.colors.alpha.black[100], 0.08)};
 
@@ -57,7 +65,11 @@ function SidebarTopSection({ user }) {
   return (
     <>
       <UserBoxButton fullWidth color="secondary" ref={ref}>
-        <Avatar variant="circular" alt={user?.name} src={user?.profileImage} />
+        <Avatar
+          variant="circular"
+          alt={user?.name}
+          src={user?.profileImage}
+        />
         <Box
           display="flex"
           flex={1}
