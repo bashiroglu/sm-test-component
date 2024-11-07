@@ -1,7 +1,5 @@
-import { Theme, ThemeProvider } from "@mui/material";
 import { Theme as MuiTheme } from "@mui/material/styles";
 import React from "react";
-import { themeScheme } from "./theme";
 
 //FIXME: list
 //spacing: any;
@@ -368,15 +366,3 @@ declare module "@mui/material/styles" {
     };
   }
 }
-
-interface MyComponentProps {
-  children: React.ReactNode;
-}
-
-const ThemeProviderWrapper: React.FC<MyComponentProps> = (props) => {
-  const theme: Theme = themeScheme;
-
-  return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
-};
-
-export default ThemeProviderWrapper;

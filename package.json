@@ -1,6 +1,6 @@
 {
   "name": "@bashiroglu/sm-test-component",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "React Toast Popup is a simple and customizable toast notification component for React applications.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
