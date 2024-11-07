@@ -18,7 +18,7 @@ const SidebarWrapper = styled(Box)(
         min-width: ${theme.sidebar.width};
         color: ${theme.sidebar.textColor};
         background: ${theme.sidebar.background};
-        box-shadow: ${theme.sidebar.boxShadow};
+      
         position: relative;
         z-index: 7;
         height: 100%;
@@ -62,7 +62,6 @@ function SMSidebar({ sidebarToggle, toggleSidebar, user, menuItems }) {
       </SidebarWrapper>
       <Drawer
         sx={{
-          boxShadow: `${theme.sidebar.boxShadow}`,
         }}
         anchor={theme.direction === "rtl" ? "right" : "left"}
         open={sidebarToggle}
